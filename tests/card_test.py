@@ -26,20 +26,19 @@ def test_card_number_le_or_eq_52():
 
 
 def test_card_gt_lt_comparison():
-    c1 = Card(1)
+    assert Card(1) < Card(20)
+    assert Card(20) < Card(52)
 
-    c2 = Card(20)
+    assert Card(20) > Card(1)
+    assert Card(52) > Card(20)
 
-    c3 = Card(52)
+    assert Card(1) < Card(52)
+    assert Card(52) > Card(1)
 
-    assert c1 < c2
-    assert c2 < c3
-
-    assert c2 > c1
-    assert c3 > c2
-
-    assert c1 < c3
-    assert c3 > c1
+    with pytest.raises(
+        AssertionError, match="Can't compare <class 'game.card.Card'> and <class 'str'>"
+    ):
+        Card(1) > "i am a str"
 
 
 def test_card_hash():
@@ -53,3 +52,8 @@ def test_card_hash():
 def test_card_eq():
     assert not Card(2) == Card(3)
     assert Card(2) == Card(2)
+
+    with pytest.raises(
+        AssertionError, match="Can't compare <class 'game.card.Card'> and <class 'str'>"
+    ):
+        Card(1) == "i am a str"
