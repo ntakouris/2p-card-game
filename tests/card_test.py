@@ -40,3 +40,16 @@ def test_card_gt_lt_comparison():
 
     assert c1 < c3
     assert c3 > c1
+
+
+def test_card_hash():
+    card_set = set([Card(2), Card(2), Card(3)])
+    assert len(card_set) == 2
+
+    assert Card(2) in card_set
+    assert Card(3) in card_set
+
+
+def test_card_eq():
+    assert not Card(2) == Card(3)
+    assert Card(2) == Card(2)

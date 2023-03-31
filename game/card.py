@@ -8,3 +8,10 @@ class Card:
     def __gt__(self, other) -> bool:
         assert isinstance(other, Card), f"Can't compare {type(self)} and {type(other)}"
         return self._number > other._number
+
+    def __eq__(self, other):
+        assert isinstance(other, Card), f"Can't compare {type(self)} and {type(other)}"
+        return self._number == other._number
+
+    def __hash__(self):
+        return self._number
