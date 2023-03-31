@@ -15,3 +15,6 @@ class Card:
 
     def __hash__(self):
         return self._number
+
+    def __str__(self) -> str:
+        return str(self._number)

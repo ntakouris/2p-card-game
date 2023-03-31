@@ -3,6 +3,10 @@ import pytest
 from game.card import Card
 
 
+def test_card_str():
+    assert f"{Card(5)}" == "5"
+
+
 def test_card_number_gt_or_eq_1():
     with pytest.raises(AssertionError, match="Card number 0 should be >= 1"):
         Card(0)
