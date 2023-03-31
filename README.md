@@ -1,5 +1,7 @@
 # 2p-card-game
 
+[![Python package](https://github.com/ntakouris/2p-card-game/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ntakouris/2p-card-game/actions/workflows/ci.yml)
+
 ## Exercise
 We would like you to build a 2-player card game, the game is played as follows:
 
