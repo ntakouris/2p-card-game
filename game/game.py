@@ -1,4 +1,4 @@
-from game.deck import Deck
+from .deck import Deck
 
 
 class Game:
@@ -34,7 +34,3 @@ class Game:
             print("Player 2 wins the game!")
         else:
             print("The game is a draw!")
-
-
-if __name__ == "__main__":
-    Game().play_game()

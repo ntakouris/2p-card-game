@@ -1,6 +1,6 @@
 import random
 from typing import List, Tuple
-from game.card import Card
+from .card import Card
 
 
 class Deck:
